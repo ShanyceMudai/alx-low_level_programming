@@ -11,3 +11,4 @@ int helper_function(int i, int j);
 int is_palindrome(char *s);
 int stringLength(char *s);
 int compareCharacters(char *s, int left, int right);
+int wildcmp(char *s1, char *s2);
