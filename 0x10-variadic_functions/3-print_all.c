@@ -9,11 +9,11 @@
  */
 void print_all(const char * const format, ...)
 {
-	int a, checkstatus;
+	int a, checkstatus; /* declare variables */
 	char *str;
 	va_list bag;
 
-	va_start(bag, format);
+	va_start(bag, format); /* initialize var arguments */
 	a = 0;
 
 	while (format != NULL && format[a] != '\0')
@@ -26,7 +26,7 @@ void print_all(const char * const format, ...)
 				break;
 			case 'i':
 				printf("%d", va_arg(bag, int));
-				checkstatus = 0;
+				checkstatus = 0; /* check if condition is met */
 				break;
 			case 'f':
 				printf("%f", va_arg(bag, double));
@@ -42,9 +42,9 @@ void print_all(const char * const format, ...)
 				checkstatus = 1;
 				break;
 		}
-		if (format[a + 1] != '\0' && checkstatus == 0)
+		if (format[a + 1] != '\0' && checkstatus == 0) /* if NOT NULL */
 			printf(", ");
-		a++;
+		a++; /* update step of iteration variable */
 	}
 	printf("\n");
 	va_end(bag);
